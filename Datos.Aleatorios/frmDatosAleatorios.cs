@@ -22,11 +22,9 @@ namespace Datos.Aleatorios
         {
             Random r = new Random();
 
-            // Crear instancia de Empleado
             Empleado emp = new Empleado();
 
-            // Generar datos aleatorios
-            emp.Numero = r.Next(1, 1001); // Número entre 1 y 1000
+            emp.Numero = r.Next(1, 1001); 
 
             string[] nombres = { "Juan", "María", "Pedro", "Ana", "Luis", "Laura", "Carlos", "Sofía" };
             string[] apellidos = { "Pérez", "Gómez", "Rodríguez", "Fernández", "López", "Martínez" };
@@ -34,7 +32,7 @@ namespace Datos.Aleatorios
 
             DateTime start = new DateTime(1950, 1, 1);
             int range = (DateTime.Today - start).Days;
-            emp.FechaNacimiento = start.AddDays(r.Next(range)); // Fecha aleatoria desde 1950 hasta hoy
+            emp.FechaNacimiento = start.AddDays(r.Next(range)); 
 
             string[] sexos = { "Masculino", "Femenino" };
             emp.Sexo = sexos[r.Next(sexos.Length)];
@@ -42,10 +40,9 @@ namespace Datos.Aleatorios
             char[] grupos = { 'A', 'B', 'C', 'D' };
             emp.Grupo = grupos[r.Next(grupos.Length)];
 
-            emp.Sueldo = r.Next(1000, 10001) + r.NextDouble(); // Sueldo entre 1000 y 10000 con decimales
-            emp.SeguroMedico = (r.Next(2) == 0); // 50% de probabilidad
+            emp.Sueldo = r.Next(1000, 10001) + r.NextDouble(); 
+            emp.SeguroMedico = (r.Next(2) == 0); 
 
-            // Asignar valores a los controles del formulario
             txtNumero.Text = emp.Numero.ToString();
             txtNombre.Text = emp.Nombre;
             dtpFechaNacimiento.Value = emp.FechaNacimiento;
